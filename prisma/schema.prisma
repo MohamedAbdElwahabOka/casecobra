@@ -1,5 +1,3 @@
-
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -9,3 +7,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Configuration {
+  id              String  @id @default(cuid())
+  imageUrl        String
+  width           Int
+  height          Int
+  croppedImageUrl String?
+}
