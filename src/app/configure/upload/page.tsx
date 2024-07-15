@@ -9,7 +9,7 @@ import { useState, useTransition } from 'react'
 import Dropzone, { FileRejection } from 'react-dropzone'
 // import { date } from 'zod'
 
-function page() {
+function Page() {
     // const toast = useToast()
     const [isDragOver ,setIsDragOver] = useState(false)
     const [uploadProgress, setUploadProgress] = useState<number>(0)
@@ -67,7 +67,7 @@ function page() {
                         <input {...getInputProps()} />
                         {isDragOver ?
                         
-                        <MousePointerSquareDashed className='h-6 w-6 text-zinc-500 mb-2'/> : isUploading || isPending ? <Loader2 className='animate-spin h-6 w-6 text-zinc-500'/> :<Image className='h-6 w-6 text-zinc-500 mb-2'/>}
+                        <MousePointerSquareDashed className='h-6 w-6 text-zinc-500 mb-2'/> : isUploading || isPending ? <Loader2 className='animate-spin h-6 w-6 text-zinc-500'/> :<Image  className='h-6 w-6 text-zinc-500 mb-2'/>}
                         <div className='flex flex-col justify-center mb-2 text-sm text-zinc-700'>
                             {isUploading ? (
                                 <div className='flex flex-col items-center'>
@@ -108,7 +108,7 @@ function page() {
   )
 }
 
-export default page
+export default Page
 
 
 
