@@ -21,7 +21,7 @@ const STEPS = [
   },
 ]
 
-const steps = () => {
+const Steps = () => {
   const pathname = usePathname()
 
   return (
@@ -55,6 +55,7 @@ const steps = () => {
                 <span className='flex-shrink-0'>
                   <img
                     src={imgPath}
+                    alt={`Step ${i + 1}`}
                     className={cn(
                       'flex h-20 w-20 object-contain items-center justify-center',
                       {
@@ -103,4 +104,4 @@ const steps = () => {
   )
 }
 
-export default steps
+export default Steps
