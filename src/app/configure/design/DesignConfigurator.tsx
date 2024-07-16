@@ -6,7 +6,7 @@ import { Rnd } from 'react-rnd'
 import HandleComponent from '@/components/HandleComponent'
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { RadioGroup } from '@headlessui/react' 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { COLORS, MATERIALS, MODELS ,FINISHES } from "@/validators/option-validator";
 import { Label } from "@/components/ui/label";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -30,6 +30,12 @@ const DesignConfigurator = ({
     imageDimensions,
   }: DesignConfiguratorProps) =>
     {
+
+
+      
+
+      
+
       const router = useRouter()
       const {mutate: saveConfig, isPending } = useMutation({
         mutationKey:["save-config"],
@@ -136,6 +142,18 @@ const DesignConfigurator = ({
           const byteArray = new Uint8Array(byteNumbers)
           return new Blob([byteArray], { type: mimeType })
         }
+
+
+      const [imageSrc, setImageSrc] = useState(`/${options?.model.value}-template.png`);
+
+      useEffect(() => {
+       
+          setImageSrc(`/${options?.model.value}-template.png`);
+      
+      }, [options?.model.label]); 
+
+
+      console.log("imageSrc",imageSrc)
       
 
        
@@ -152,8 +170,9 @@ const DesignConfigurator = ({
                  <NextImage
                   fill
                   alt='phone image'
-                  src='/iphoneXX.png'
+                  // src='/iphoneXX.png'
                   // src='/phone-template.png'
+                  src={imageSrc}
                   className='pointer-events-none z-50 select-none'
                   />
             </AspectRatio>
