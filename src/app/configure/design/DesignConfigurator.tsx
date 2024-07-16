@@ -67,6 +67,7 @@ const DesignConfigurator = ({
         })
 
         console.log(renderedDimension.width)
+        console.log(MODELS.options)
         
         const [renderedPosition, setRenderedPosition] = useState({
           x: 150,
@@ -151,7 +152,8 @@ const DesignConfigurator = ({
                  <NextImage
                   fill
                   alt='phone image'
-                  src='/phone-template.png'
+                  src='/iphoneXX.png'
+                  // src='/phone-template.png'
                   className='pointer-events-none z-50 select-none'
                   />
             </AspectRatio>
