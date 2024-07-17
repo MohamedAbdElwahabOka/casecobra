@@ -62,7 +62,7 @@ const DesignConfigurator = ({
           finish: (typeof FINISHES.options)[number]
         }>({
           color: COLORS[0],
-          model: MODELS.options[0],
+          model: MODELS.options[1],
           material: MATERIALS.options[0],
           finish: FINISHES.options[0],
         })
